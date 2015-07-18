@@ -5,3 +5,11 @@
 class window.App extends Backbone.Model
   initialize: ->
     @set 'game', game = new Game()
+
+    @set 'wins', 0
+
+    @set 'losses', 0
+
+    @set 'ties', 0
+
+    @set 'chips', 0

@@ -4,8 +4,9 @@ class window.AppView extends Backbone.View
   template: _.template '
     <h1>Blackjack</h1>
     <div class="stats">
-      <div class="win-loss">Games won/lost: 0 / 0</div>
-      <div class="chips">Chips: 0</div> 
+      <div class="win-loss">Games won/lost: <%= wins %> / <%= losses %></div>
+      <div class="win-loss">Games ties: <%= ties %></div>
+      <div class="chips">Chips: <%= chips %></div> 
     </div>
     <div class="gameview-container"></div>
   '
@@ -13,9 +14,25 @@ class window.AppView extends Backbone.View
   initialize: ->
     @render()
 
+    @model.on 'change:wins change:losses change:ties', ->
+      @render()
+
   render: ->
     # adds a new gameview into the DOM
+    console.log @model
+    console.log @model.attributes
     @$el.children().detach()
-    @$el.html @template()
+    @$el.html @template( @model.attributes )
     @$('.gameView-container').html new GameView(model: @model.get 'game').el
 
+
+###
+
+   template: _.template('<td classname="count"><%= playedCount %></td><td>(<%= artist %>)</td><td><%= title %></td>'),
+
+
+    render: function(){
+    return this.$el.html(this.template(this.model.attributes));
+  }
+
+###

@@ -24,15 +24,3 @@ class window.AppView extends Backbone.View
     @$el.children().detach()
     @$el.html @template( @model.attributes )
     @$('.gameView-container').html new GameView(model: @model.get 'game').el
-
-
-###
-
-   template: _.template('<td classname="count"><%= playedCount %></td><td>(<%= artist %>)</td><td><%= title %></td>'),
-
-
-    render: function(){
-    return this.$el.html(this.template(this.model.attributes));
-  }
-
-###

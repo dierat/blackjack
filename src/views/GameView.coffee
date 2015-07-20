@@ -2,9 +2,8 @@ class window.GameView extends Backbone.View
   className: 'gameView'
 
   template: _.template '
-    <div>
-      <button class="new-game">New Game</button>
-    </div>
+
+    <button class="new-game">New Game</button>
     <button class="hit-button">Hit</button> <button class="stand-button">Stand</button>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
@@ -17,6 +16,7 @@ class window.GameView extends Backbone.View
 
   initialize: ->
     @render()
+    
     @model.on 'win', =>
       alert "YOU WON OMG"
 

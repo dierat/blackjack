@@ -2,7 +2,7 @@ class window.AppView extends Backbone.View
   className: 'appView'
 
   template: _.template '
-    <h1>Blackjack</h1>
+    <h1>BLACKJACK</h1>
     <div class="stats">
       <div class="win-loss">Games won/lost: <%= wins %> / <%= losses %></div>
       <div class="win-loss">Games ties: <%= ties %></div>

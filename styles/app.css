@@ -1,15 +1,30 @@
+body {
+  margin: 0;
+  font-family: 'Handlee', cursive;
+}
+
+h1 {
+  background-color: black;
+  color: #f7d6ad;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+}
+
 .card {
   float: left;
   border: solid 1px black;
   width: 100px;
-  border-radius: 5px;
+  border-radius: 8px;
   height: 140px;
   margin-right: 20px;
+  padding: 5px;
 }
 
 .covered {
   background-color: black;
-  background-image: url('card-back.png');
+  background-image: url('rabbitback.jpg');
   background-size: 100%;
 
   /* hide text */
@@ -27,6 +42,30 @@
   display: flex;
 }
 
-.new-game, .win-loss, .chips {
+.win-loss, .chips {
   margin: 0 5px 5px 0;
+}
+
+.stats, .gameview-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.stats {
+  padding-top: 20px;
+}
+
+button {
+  background-color: black;
+  border: none;
+  color: #f7d6ad;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 15px 10px 0 0;
+  padding: 10px;
+  font-family: 'Handlee', cursive;
+}
+
+.stats {
+  font-size: 20px;
 }

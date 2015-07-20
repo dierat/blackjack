@@ -17,15 +17,15 @@ class window.GameView extends Backbone.View
 
   initialize: ->
     @render()
-    @model.on 'win', -> 
+    @model.on 'win', =>
       alert "YOU WON OMG"
-    , @
-    @model.on 'lose', -> 
+
+    @model.on 'lose', =>
       alert "You lost.."
-    , @
-    @model.on 'push', -> 
+
+    @model.on 'push', =>
       alert "It's a tie!"
-    , @
+
 
   render: ->
     @$el.children().detach()

@@ -12,8 +12,6 @@ class window.App extends Backbone.Model
 
     @set 'ties', 0
 
-    @set 'chips', 0
-
 
   # to create new games on command, you make a newGame function that encapsulates making a new game and also creating the event listeners for win, lose, and tie, which will call this newGame function
   newGame: ->

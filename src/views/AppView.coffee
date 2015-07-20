@@ -6,7 +6,6 @@ class window.AppView extends Backbone.View
     <div class="stats">
       <div class="win-loss">Games won/lost: <%= wins %> / <%= losses %></div>
       <div class="win-loss">Games ties: <%= ties %></div>
-      <div class="chips">Chips: <%= chips %></div> 
     </div>
     <div class="gameview-container"></div>
   '

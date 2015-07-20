@@ -14,13 +14,11 @@ class window.AppView extends Backbone.View
   initialize: ->
     @render()
 
-    @model.on 'change:wins change:losses change:ties', ->
+    @model.on 'change:game', =>
       @render()
 
   render: ->
     # adds a new gameview into the DOM
-    console.log @model
-    console.log @model.attributes
     @$el.children().detach()
     @$el.html @template( @model.attributes )
     @$('.gameView-container').html new GameView(model: @model.get 'game').el

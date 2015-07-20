@@ -11,8 +11,7 @@ class window.GameView extends Backbone.View
   '
 
   events:
-    'click .new-game': -> 
-      @newGame()
+    'click .new-game': -> @model.newGame()
     'click .hit-button': -> @model.get('playerHand').hit()
     'click .stand-button': -> @model.get('dealerHand').startDealerTurn()
 
@@ -20,15 +19,12 @@ class window.GameView extends Backbone.View
     @render()
     @model.on 'win', -> 
       alert "YOU WON OMG"
-      @newGame()
     , @
     @model.on 'lose', -> 
       alert "You lost.."
-      @newGame()
     , @
     @model.on 'push', -> 
       alert "It's a tie!"
-      @newGame()
     , @
 
   render: ->
@@ -36,7 +32,3 @@ class window.GameView extends Backbone.View
     @$el.html @template()
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el
     @$('.dealer-hand-container').html new HandView(collection: @model.get 'dealerHand').el
-
-  newGame: ->
-    @model.initialize()
-    @render()

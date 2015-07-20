@@ -33,4 +33,7 @@ class window.Game extends Backbone.Model
     if playerScore > dealerScore then @trigger('win')
     else if playerScore < dealerScore then @trigger('lose')
     else @trigger('push')
+
+  newGame: ->
+    @trigger('newGame')
     
